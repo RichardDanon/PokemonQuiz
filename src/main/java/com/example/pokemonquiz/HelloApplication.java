@@ -12,8 +12,13 @@ public class HelloApplication extends Application {
     public void start(Stage primaryStage) throws IOException {
 
 
+        Quiz quiz = new Quiz();
+        quiz.addQuestion(new Question("Images/Absol.jpg", "Absol");
+        quiz.addQuestion(new Question("Images/Charizard.jpg", "Charizard");
 
         primaryStage.setTitle("Hello!");
+
+
 
         primaryStage.show();
     }
