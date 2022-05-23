@@ -23,6 +23,10 @@ public class HelloApplication extends Application {
         quiz.addQuestion(new Question("Images/Charizard.jpg", "Charizard"));
 
         primaryStage.setTitle("Hello!");
+        Question question = new Question("Images/Charizard.jpg", "Charizard");
+
+        Scene scene = new Scene(question.toGroup());
+        primaryStage.setScene(scene);
 
 
         primaryStage.show();

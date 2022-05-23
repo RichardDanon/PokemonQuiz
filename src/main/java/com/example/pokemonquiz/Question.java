@@ -1,9 +1,14 @@
 package com.example.pokemonquiz;
 
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+
 import java.net.URL;
 
-public class Question {
+public class Question implements Displayable {
     Image image;
     String correctResponse;
 
@@ -33,6 +38,16 @@ public class Question {
         this.correctResponse = correctResponse;
     }
 
+//    Converts the question into a displayable group
+    @Override
+    public Group toGroup() {
+        Group group = new Group();
 
-    
+
+        ImageView viewImage = new ImageView(image);
+        group.getChildren().add(viewImage);
+
+
+        return group;
+    }
 }
