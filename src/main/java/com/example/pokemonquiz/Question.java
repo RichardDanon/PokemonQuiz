@@ -19,28 +19,16 @@ public class Question implements Displayable {
 
 
     public Question(String imagePath, String correctResponse){
-        //Image Pikachu = new Image("Images/Pikachu.jpg");
 
         //Adding my images
-//        URL Absol = HelloApplication.class.getResource("Images/Absol.jpg");
-            URL imageURL = HelloApplication.class.getResource(imagePath);
+        URL imageURL = HelloApplication.class.getResource(imagePath);
 
-//        URL Charizard = HelloApplication.class.getResource("Images/Charizard.jpg");
-//        URL Dialga = HelloApplication.class.getResource("Images/Dialga.jpg");
-//        URL Eevee = HelloApplication.class.getResource("Images/Eevee.jpg");
-//        URL Flygon = HelloApplication.class.getResource("Images/Flygon.jpg");
-//        URL Groudon = HelloApplication.class.getResource("Images/Groudon.jpg");
-//        URL Lapras = HelloApplication.class.getResource("Images/Lapras.jpg");
-//        URL Lucario = HelloApplication.class.getResource("Images/Lucario.jpg");
-//        URL Marill = HelloApplication.class.getResource("Images/Marill.jpg");
-//        URL Mew = HelloApplication.class.getResource("Images/Mew.jpg");
-//        URL Pikachu = HelloApplication.class.getResource("Images/Pikachu.jpg");
-//        URL Snorlax = HelloApplication.class.getResource("Images/Snorlax.jpg");
-//        URL Spewpa = HelloApplication.class.getResource("Images/Spewpa.jpg");
-//        URL Swinub = HelloApplication.class.getResource("Images/Swinub.jpg");
-//        URL Umbreon = HelloApplication.class.getResource("Images/Umbreon.jpg");
         this.image = new Image(imageURL.toString());
         this.correctResponse = correctResponse;
+    }
+
+    public boolean isCorrect(String response){
+        return response.equalsIgnoreCase(correctResponse);
     }
 
 //    Converts the question into a displayable group
@@ -49,7 +37,7 @@ public class Question implements Displayable {
         Group group = new Group();
         VBox root = new VBox();
         TextField textField = new TextField();
-
+        textField.setId("userAnswer");
 
 
         ImageView viewImage = new ImageView(image);
@@ -57,8 +45,6 @@ public class Question implements Displayable {
 
         root.getChildren().add(viewImage);
         root.getChildren().add(textField);
-
-
 
         return group;
     }

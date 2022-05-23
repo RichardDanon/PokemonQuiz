@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -35,17 +36,21 @@ public class HelloApplication extends Application {
         primaryStage.setTitle("Hello!");
 
         VBox root = new VBox();
-        //while the quiz has another question
 
         Pane questionPane = new Pane(quiz.getNextQuestion().toGroup());
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
 
+        //Button
         Button b = new Button();
         b.setMinWidth(60);
         b.setMinHeight(40);
         b.setOnAction(actionEvent -> {
+            TextField answer = (TextField) scene.lookup("#userAnswer");
+            if (quiz.currentQuestion().isCorrect(answer.getText())){
+                //increment score
+            }
             if (quiz.hasNextQuestion()) {
                 questionPane.getChildren().setAll(quiz.getNextQuestion().toGroup());
             }
@@ -58,13 +63,6 @@ public class HelloApplication extends Application {
         root.getChildren().add(b);
 
         primaryStage.show();
-
-
-            //display the next question in the quiz
-
-        //end while
-        // display the score
-
 
 
 

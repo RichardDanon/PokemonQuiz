@@ -36,4 +36,8 @@ public class Quiz {
 
         return nextQuestion;
     }
+
+    public Question currentQuestion(){
+        return questions.get(indexOfQuestion);
+    }
 }
