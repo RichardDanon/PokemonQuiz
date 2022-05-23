@@ -3,7 +3,7 @@ package com.example.pokemonquiz;
 import javafx.scene.image.Image;
 import java.net.URL;
 
-public class Question extends Quiz {
+public class Question {
     Image image;
     String correctResponse;
 
@@ -13,7 +13,7 @@ public class Question extends Quiz {
 
         //Adding my images
 //        URL Absol = HelloApplication.class.getResource("Images/Absol.jpg");
-        URL imageURL = HelloApplication.class.getResource("Images/Absol.jpg");
+            URL imageURL = HelloApplication.class.getResource(imagePath);
 
 //        URL Charizard = HelloApplication.class.getResource("Images/Charizard.jpg");
 //        URL Dialga = HelloApplication.class.getResource("Images/Dialga.jpg");
@@ -29,11 +29,10 @@ public class Question extends Quiz {
 //        URL Spewpa = HelloApplication.class.getResource("Images/Spewpa.jpg");
 //        URL Swinub = HelloApplication.class.getResource("Images/Swinub.jpg");
 //        URL Umbreon = HelloApplication.class.getResource("Images/Umbreon.jpg");
-        this.image = new Image("Images/Absol.jpg");
+        this.image = new Image(imageURL.toString());
         this.correctResponse = correctResponse;
-
-
     }
+
 
     
 }

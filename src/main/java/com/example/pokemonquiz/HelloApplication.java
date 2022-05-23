@@ -11,13 +11,18 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
+        primaryStage.setMinHeight(800);
+        primaryStage.setMinWidth(500);
+        primaryStage.setMaxHeight(800);
+        primaryStage.setMaxWidth(500);
+        primaryStage.setResizable(false);
+
 
         Quiz quiz = new Quiz();
-        quiz.addQuestion(new Question("Images/Absol.jpg", "Absol");
-        quiz.addQuestion(new Question("Images/Charizard.jpg", "Charizard");
+        quiz.addQuestion(new Question("Images/Absol.jpg", "Absol"));
+        quiz.addQuestion(new Question("Images/Charizard.jpg", "Charizard"));
 
         primaryStage.setTitle("Hello!");
-
 
 
         primaryStage.show();
