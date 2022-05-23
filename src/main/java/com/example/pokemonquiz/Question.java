@@ -1,10 +1,15 @@
 package com.example.pokemonquiz;
 
+import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 
@@ -42,10 +47,19 @@ public class Question implements Displayable {
     @Override
     public Group toGroup() {
         Group group = new Group();
+        VBox root = new VBox();
+        TextField textField = new TextField();
+        Button b = new Button();
+        b.setMinWidth(60);
+        b.setMinHeight(40);
 
 
         ImageView viewImage = new ImageView(image);
-        group.getChildren().add(viewImage);
+        group.getChildren().add(root);
+
+        root.getChildren().add(viewImage);
+        root.getChildren().add(textField);
+        root.getChildren().add(b);
 
 
         return group;
