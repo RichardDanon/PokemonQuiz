@@ -49,9 +49,7 @@ public class Question implements Displayable {
         Group group = new Group();
         VBox root = new VBox();
         TextField textField = new TextField();
-        Button b = new Button();
-        b.setMinWidth(60);
-        b.setMinHeight(40);
+
 
 
         ImageView viewImage = new ImageView(image);
@@ -59,7 +57,7 @@ public class Question implements Displayable {
 
         root.getChildren().add(viewImage);
         root.getChildren().add(textField);
-        root.getChildren().add(b);
+
 
 
         return group;
