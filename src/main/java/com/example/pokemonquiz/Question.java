@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import org.kordamp.bootstrapfx.scene.layout.Panel;
 
 import java.net.URL;
 
@@ -30,18 +31,25 @@ public class Question implements Displayable {
 //    Converts the question into a displayable group
     @Override
     public Pane toPane() {
-        Pane pane = new Pane();
-        VBox root = new VBox();
+
+        Panel questionPanel = new Panel("Who is that Pokemon??!");
+        questionPanel.getStyleClass().add("panel-primary");
+
         TextField textField = new TextField();
         textField.setId("userAnswer");
 
-
         ImageView viewImage = new ImageView(image);
-        pane.getChildren().add(root);
+        viewImage.setFitWidth(450);
+        viewImage.setPreserveRatio(true);
 
-        root.getChildren().add(viewImage);
-        root.getChildren().add(textField);
+        VBox pane = new VBox(viewImage,textField);
 
-        return pane;
+        questionPanel.setBody(pane);
+
+
+
+
+
+        return questionPanel;
     }
 }

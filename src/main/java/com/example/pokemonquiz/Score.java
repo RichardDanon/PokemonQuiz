@@ -16,6 +16,11 @@ public class Score implements Displayable{
         this.title = "Score";
     }
 
+    public Score(String title){
+        this();
+        this.title = title;
+    }
+
     public Score(Score s1) {
         this.numScore = s1.numScore;
         this.title = s1.title;
@@ -50,6 +55,8 @@ public class Score implements Displayable{
 
         Pane pane = new Pane();
         pane.getChildren().add(score);
+
+        pane.setStyle("-fx-padding: 25");
 
         return pane;
     }

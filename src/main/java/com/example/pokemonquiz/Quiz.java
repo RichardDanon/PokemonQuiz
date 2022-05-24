@@ -1,6 +1,7 @@
 package com.example.pokemonquiz;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Quiz {
 
@@ -16,7 +17,7 @@ public class Quiz {
 
     public Quiz(){
         this.questions = new ArrayList<>();
-        this.highScore = new Score();
+        this.highScore = new Score("High Score");
         this.numberOfQuestions = 0;
         this.indexOfQuestion = 0;
     }
@@ -34,7 +35,6 @@ public class Quiz {
         //write test later
         indexOfQuestion++;
         Question nextQuestion = this.questions.get(indexOfQuestion);
-
 
         return nextQuestion;
     }
@@ -57,5 +57,6 @@ public class Quiz {
 
     public void reset() {
         indexOfQuestion = 0;
+        Collections.shuffle(questions);
     }
 }
