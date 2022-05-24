@@ -1,15 +1,15 @@
 package com.example.pokemonquiz;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.ArrayList;
+
 import org.kordamp.bootstrapfx.BootstrapFX;
 
 public class HelloApplication extends Application {
@@ -40,7 +40,7 @@ public class HelloApplication extends Application {
 
         VBox root = new VBox();
 
-        Pane contentPane = new Pane(quiz.currentQuestion().toGroup());
+        Pane contentPane = new FlowPane(quiz.currentQuestion().toPane());
 
         Scene scene = new Scene(root);
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
@@ -53,8 +53,9 @@ public class HelloApplication extends Application {
         b.setOnAction(actionEvent -> {
             if (restart){
                 quiz.reset();
+                score.reset();
 
-                contentPane.getChildren().setAll(quiz.currentQuestion().toGroup());
+                contentPane.getChildren().setAll(quiz.currentQuestion().toPane());
                 restart = false;
 
                 return;
@@ -65,13 +66,13 @@ public class HelloApplication extends Application {
                 score.recordCorrectAnswer();
             }
             if (quiz.hasNextQuestion()) {
-                contentPane.getChildren().setAll(quiz.getNextQuestion().toGroup());
+                contentPane.getChildren().setAll(quiz.getNextQuestion().toPane());
             }
             else {
                 //show the score
                 quiz.setFinalScore(score);
-                contentPane.getChildren().setAll(score.toGroup(),
-                        quiz.getHighScore().toGroup());
+                contentPane.getChildren().setAll(score.toPane(),
+                        quiz.getHighScore().toPane());
 
                 restart = true;
             }

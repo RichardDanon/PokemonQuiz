@@ -46,7 +46,8 @@ public class Quiz {
     public void setFinalScore(Score high){
 
         if (high.isHigher(highScore)){
-            this.highScore = high;
+            this.highScore = new Score(high);
+            this.highScore.setTitle("High Score");
         }
     }
 

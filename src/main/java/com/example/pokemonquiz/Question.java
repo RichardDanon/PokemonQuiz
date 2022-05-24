@@ -1,15 +1,11 @@
 package com.example.pokemonquiz;
 
-import javafx.geometry.VPos;
 import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 import java.net.URL;
 
@@ -33,19 +29,19 @@ public class Question implements Displayable {
 
 //    Converts the question into a displayable group
     @Override
-    public Group toGroup() {
-        Group group = new Group();
+    public Pane toPane() {
+        Pane pane = new Pane();
         VBox root = new VBox();
         TextField textField = new TextField();
         textField.setId("userAnswer");
 
 
         ImageView viewImage = new ImageView(image);
-        group.getChildren().add(root);
+        pane.getChildren().add(root);
 
         root.getChildren().add(viewImage);
         root.getChildren().add(textField);
 
-        return group;
+        return pane;
     }
 }

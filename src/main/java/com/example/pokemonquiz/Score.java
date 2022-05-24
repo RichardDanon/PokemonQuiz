@@ -3,15 +3,22 @@ package com.example.pokemonquiz;
 import javafx.scene.Group;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.Pane;
 import org.kordamp.bootstrapfx.scene.layout.Panel;
 
 public class Score implements Displayable{
     private int numScore;
+    private String title;
 
 
     public Score(){
         this.numScore = 0;
+        this.title = "Score";
+    }
+
+    public Score(Score s1) {
+        this.numScore = s1.numScore;
+        this.title = s1.title;
     }
 
     public void recordCorrectAnswer(){
@@ -22,30 +29,30 @@ public class Score implements Displayable{
         return this.numScore > otherScore.numScore;
     }
 
-    public int scoreToInt(){
-        return this.numScore;
+    public void reset() {
+        this.numScore = 0;
+    }
+    public void setTitle(String title){
+        this.title = title;
     }
 
     @Override
-    public Group toGroup() {
-        Panel score = new Panel("Score");
-        BorderPane pane = new BorderPane();
+    public Pane toPane() {
+        Panel score = new Panel(this.title);
+        BorderPane contentPane = new BorderPane();
         Label label = new Label(String.valueOf(numScore));
-        score.setBody(pane);
 
+        score.setBody(contentPane);
+        contentPane.setCenter(label);
 
         score.getStyleClass().add("panel-success");
 
 
-        Group group = new Group();
-        group.getChildren().add(score);
+        Pane pane = new Pane();
+        pane.getChildren().add(score);
 
-
-        pane.setCenter(label);
-
-
-
-
-        return group;
+        return pane;
     }
+
+
 }

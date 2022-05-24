@@ -1,8 +1,7 @@
 package com.example.pokemonquiz;
 
-import javafx.scene.Group;
-import javafx.scene.Node;
+import javafx.scene.layout.Pane;
 
 public interface Displayable {
-    Group toGroup();
+    Pane toPane();
 }
