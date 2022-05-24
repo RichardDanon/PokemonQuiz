@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Quiz {
 
     private ArrayList<Question> questions;
-    private int highScore;
+    private Score highScore;
     private int numberOfQuestions;
     private int indexOfQuestion;
 
@@ -16,7 +16,7 @@ public class Quiz {
 
     public Quiz(){
         this.questions = new ArrayList<>();
-        this.highScore = 0;
+        this.highScore = new Score();
         this.numberOfQuestions = 0;
         this.indexOfQuestion = 0;
     }
@@ -31,13 +31,30 @@ public class Quiz {
     }
 
     public Question getNextQuestion(){
-        Question nextQuestion = this.questions.get(indexOfQuestion);
+        //write test later
         indexOfQuestion++;
+        Question nextQuestion = this.questions.get(indexOfQuestion);
+
 
         return nextQuestion;
     }
 
     public Question currentQuestion(){
         return questions.get(indexOfQuestion);
+    }
+
+    public void setFinalScore(Score high){
+
+        if (high.isHigher(highScore)){
+            this.highScore = high;
+        }
+    }
+
+    public Score getHighScore() {
+        return this.highScore;
+    }
+
+    public void reset() {
+        indexOfQuestion = 0;
     }
 }

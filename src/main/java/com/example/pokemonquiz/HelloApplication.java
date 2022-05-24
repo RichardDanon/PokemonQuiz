@@ -8,13 +8,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.ArrayList;
+import org.kordamp.bootstrapfx.BootstrapFX;
 
 public class HelloApplication extends Application {
     private final String[] pokemon = {"Absol","Charizard","Dialga","Eevee","Flygon"
             ,"Groudon","Lapras","Lucario","Marill","Mew","Pikachu","Snorlax","Spewpa","Swinub","Umbreon"};
+
+    private boolean restart = false;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -27,6 +29,7 @@ public class HelloApplication extends Application {
 
 
         Quiz quiz = new Quiz(5);
+        Score score = new Score();
 
         //building the quiz based on the pokemon name
         for(String pokemon : this.pokemon){
@@ -37,9 +40,10 @@ public class HelloApplication extends Application {
 
         VBox root = new VBox();
 
-        Pane questionPane = new Pane(quiz.getNextQuestion().toGroup());
+        Pane contentPane = new Pane(quiz.currentQuestion().toGroup());
 
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         primaryStage.setScene(scene);
 
         //Button
@@ -47,24 +51,36 @@ public class HelloApplication extends Application {
         b.setMinWidth(60);
         b.setMinHeight(40);
         b.setOnAction(actionEvent -> {
+            if (restart){
+                quiz.reset();
+
+                contentPane.getChildren().setAll(quiz.currentQuestion().toGroup());
+                restart = false;
+
+                return;
+            }
             TextField answer = (TextField) scene.lookup("#userAnswer");
             if (quiz.currentQuestion().isCorrect(answer.getText())){
                 //increment score
+                score.recordCorrectAnswer();
             }
             if (quiz.hasNextQuestion()) {
-                questionPane.getChildren().setAll(quiz.getNextQuestion().toGroup());
+                contentPane.getChildren().setAll(quiz.getNextQuestion().toGroup());
             }
             else {
                 //show the score
+                quiz.setFinalScore(score);
+                contentPane.getChildren().setAll(score.toGroup(),
+                        quiz.getHighScore().toGroup());
+
+                restart = true;
             }
         });
 
-        root.getChildren().add(questionPane);
+        root.getChildren().add(contentPane);
         root.getChildren().add(b);
 
         primaryStage.show();
-
-
 
 
     }
