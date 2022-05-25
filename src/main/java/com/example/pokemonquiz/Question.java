@@ -46,10 +46,6 @@ public class Question implements Displayable {
 
         questionPanel.setBody(pane);
 
-
-
-
-
         return questionPanel;
     }
 }

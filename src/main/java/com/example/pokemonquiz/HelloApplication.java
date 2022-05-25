@@ -11,7 +11,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.IOException;
-
 import org.kordamp.bootstrapfx.BootstrapFX;
 import org.kordamp.bootstrapfx.scene.layout.Panel;
 
@@ -95,7 +94,6 @@ public class HelloApplication extends Application {
         root.getChildren().add(b);
 
         primaryStage.show();
-
 
     }
 

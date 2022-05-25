@@ -61,7 +61,6 @@ public class Score implements Displayable{
 
         pane.setStyle("-fx-padding: 25");
 
-
         return pane;
     }
 
