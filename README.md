@@ -49,5 +49,10 @@ panel was also created. It also kept track of the position of the questions (Kno
 which is the next what was the previous and such).
 #
 ### Class Diagram(Uml) and application screenshots
-![Uml_Diagram](https://user-images.githubusercontent.com/104465518/170336814-eb803329-9208-4eea-a304-ac54828170b9.jpg)
+![Uml_Diagram](https://user-images.githubusercontent.com/104465518/170336814-eb803329-9208-4eea-a304-ac54828170b9.jpg) 
+![Application_Shot1](https://user-images.githubusercontent.com/104465518/170370926-2e0f0569-7f86-4cf6-a0da-e7c56dab154e.jpg)  ![Application_Shot2](https://user-images.githubusercontent.com/104465518/170370952-efaffe3f-fe22-4f95-9d58-2f76e4a2da06.jpg)
+![Application_Shot3](https://user-images.githubusercontent.com/104465518/170370970-43580248-7d19-4a47-8c59-e581645de3bf.jpg)
+
+
+
 
