@@ -3,7 +3,7 @@
 
 ## Project Description
 ##
-#### What My application does
+### What My application does
 My application is a simple guessing game formatted as a quiz. To use the application
 at the beginning the user clicks on the start button to begin testing their knowledge.
 Once the button has been clicked the game will generate the image of 5 random pokemons
@@ -13,13 +13,13 @@ to the next question. When the user reaches the end of the quiz they will receiv
 and a highScore (their personal record depending on how many correct answers they got previously).
 Finally, they can simply restart the quiz by clicking on the restart button.
 #
-#### How the application was built
+### How the application was built
 There was no particular technology used in building my java application. It simply contains the java
 language and its functionalities. such as using an Array to store the name of pokemons. The loops were
 used in various classes to avoid repeating the same code. There was also some bootstrapFx that was used
 to embellish the application tto the best of my capabilities.
 #
-#### Some challenges I faced and features I hope to implement in the future
+### Some challenges I faced and features I hope to implement in the future
 One of the many challenges I faced while developing the application was getting the images
 to properly display withing the size of the scene I had specified. It was hard because
 I could not find a way to resize the images withing affecting the ration at first.
@@ -36,7 +36,7 @@ is blued or cropped out in a way to make recognizing them a bit harder.
 #
 ## Design
 #
-#### Brief Explanation of the functionality behind the classes and such
+### Brief Explanation of the functionality behind the classes and such
 My application was built using JavaFx. First of all, the images were imported into my ressource
 folder then I used a loop to properly access them all thanks to the array of pokemon name I made.
 The application needed to display multiple windows so what I created a displayable interface that
@@ -50,6 +50,6 @@ class had the role of making the final touches to the other two classes such as 
 panel was also created. It also kept track of the position of the questions (Knowing which is the current
 which is the next what was the previous and such).
 #
-#### Class Diagram(Uml) andd application screenshots
-![This is an image](![Uml_Diagram](https://user-images.githubusercontent.com/104465518/170336814-eb803329-9208-4eea-a304-ac54828170b9.jpg)
-)
+### Class Diagram(Uml) andd application screenshots
+![Uml_Diagram](https://user-images.githubusercontent.com/104465518/170336814-eb803329-9208-4eea-a304-ac54828170b9.jpg)
+
