@@ -40,18 +40,15 @@ class ScoreTest {
     }
 
     @Test
-    void recordCorrectAnswer() {
+    void isHigher_CheckingIfTheHighScoreIsHigherThenTheScore() {
+        highScore.recordCorrectAnswer();
+        assertTrue(highScore.isHigher(score));
     }
 
     @Test
-    void isHigher() {
-    }
-
-    @Test
-    void reset() {
-    }
-
-    @Test
-    void setTitle() {
+    void reset_MakingSureTheValueHasBeenReset() {
+        score.recordCorrectAnswer();
+        score.reset();
+        assertFalse(score.isHigher(highScore));
     }
 }
