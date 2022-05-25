@@ -44,7 +44,8 @@ public class HelloApplication extends Application {
         root.setAlignment(Pos.TOP_CENTER);
 
         Panel welcomePanel = new Panel("Welcome to the PokeQuiz");
-        welcomePanel.getStyleClass().add("panel-primary");
+        welcomePanel.getStyleClass().add("panel-danger");
+        welcomePanel.setStyle("-fx-padding: 90");
         Pane contentPane = new VBox(welcomePanel);
 
         Scene scene = new Scene(root);
