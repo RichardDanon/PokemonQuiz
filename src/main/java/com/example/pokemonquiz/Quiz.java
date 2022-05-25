@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Quiz {
-
+//Keeping track of the position of the user and the questions all through the quiz
     private ArrayList<Question> questions;
     private Score highScore;
     private int numberOfQuestions;
     private int indexOfQuestion;
 
+    //Constructors
     public Quiz(int numberOfQuestions){
         this();
         this.numberOfQuestions = numberOfQuestions;
@@ -31,8 +32,8 @@ public class Quiz {
         return numberOfQuestions > indexOfQuestion;
     }
 
+//Getting the next question in the array
     public Question getNextQuestion(){
-        //write test later
         indexOfQuestion++;
         Question nextQuestion = this.questions.get(indexOfQuestion);
 
@@ -54,7 +55,7 @@ public class Quiz {
     public Score getHighScore() {
         return this.highScore;
     }
-
+//restarting the quiz and randomizing the next questions
     public void reset() {
         indexOfQuestion = 0;
         Collections.shuffle(questions);

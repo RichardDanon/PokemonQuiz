@@ -7,9 +7,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import org.kordamp.bootstrapfx.scene.layout.Panel;
-
 import java.net.URL;
 
+//Class in charge of displaying the image with the according answer
 public class Question implements Displayable {
     Image image;
     String correctResponse;
@@ -28,7 +28,7 @@ public class Question implements Displayable {
         return response.equalsIgnoreCase(correctResponse);
     }
 
-//    Converts the question into a displayable group
+//    Converts the question into a displayable Pane
     @Override
     public Pane toPane() {
 

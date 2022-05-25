@@ -55,6 +55,7 @@ class QuizTest {
     void currentTest_ReturnsFirstQuestion(){
         assertEquals(q1,quiz.currentQuestion());
     }
+
     @Test
     void FinalScore_keepsTheOriginalHighScoreWhenItIsNotHighEnough(){
         Score score = new Score();

@@ -29,7 +29,6 @@ class QuestionTest {
     void init_setUpQuestion(){
         q1 = new Question("Images/Absol.jpg", "Absol");
         q2 = new Question("Images/Charizard.jpg", "Charizard");
-
     }
 
     //Borrowed to make the test work
