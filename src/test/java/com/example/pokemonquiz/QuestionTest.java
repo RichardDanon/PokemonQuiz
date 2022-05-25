@@ -11,11 +11,10 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class QuizTest {
+class QuestionTest {
     Quiz quiz ;
     Question q1;
     Question q2;
-
     //Borrowed to make the test work
     //https://stackoverflow.com/questions/11385604/how-do-you-unit-test-a-javafx-controller-with-junit
     @BeforeAll
@@ -46,21 +45,8 @@ class QuizTest {
     }
 
     @Test
-    void getNextQuestion_ReturnsQuestionsInCorrectOrder() {
+    void isCorrect_checkingIfTheAnswerProvidedAreCorrect() {
+        assertEquals(q1,q1.isCorrect("absol"));
 
-        assertEquals(q2,quiz.getNextQuestion());
     }
-
-    @Test
-    void currentTest_ReturnsFirstQuestion(){
-        assertEquals(q1,quiz.currentQuestion());
-    }
-    @Test
-    void FinalScore_keepsTheOriginalHighScoreWhenItIsNotHighEnough(){
-        Score score = new Score();
-        quiz.setFinalScore(score);
-
-        assertNotEquals(score,quiz.getHighScore());
-    }
-
 }

@@ -39,12 +39,12 @@ public class HelloApplication extends Application {
             quiz.addQuestion(new Question("Images/%s.jpg".formatted(pokemon), pokemon));
         }
 
-        primaryStage.setTitle("Pokemon Quiz");
+        primaryStage.setTitle("PokeQuiz");
 
         VBox root = new VBox();
         root.setAlignment(Pos.TOP_CENTER);
 
-        Panel welcomePanel = new Panel("Welcome to the Pokemon Quiz");
+        Panel welcomePanel = new Panel("Welcome to the PokeQuiz");
         welcomePanel.getStyleClass().add("panel-primary");
         Pane contentPane = new VBox(welcomePanel);
 

@@ -31,8 +31,6 @@ One of the things I would like to implement in the future is allowing the user t
 to give them more challenges. Another one would consist of making it so that the image of the pokemon
 is blued or cropped out in a way to make recognizing them a bit harder.
 
-
-#
 #
 ## Design
 #
@@ -50,6 +48,6 @@ class had the role of making the final touches to the other two classes such as 
 panel was also created. It also kept track of the position of the questions (Knowing which is the current
 which is the next what was the previous and such).
 #
-### Class Diagram(Uml) andd application screenshots
+### Class Diagram(Uml) and application screenshots
 ![Uml_Diagram](https://user-images.githubusercontent.com/104465518/170336814-eb803329-9208-4eea-a304-ac54828170b9.jpg)
 

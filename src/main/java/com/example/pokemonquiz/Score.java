@@ -1,9 +1,12 @@
 package com.example.pokemonquiz;
 
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import org.kordamp.bootstrapfx.scene.layout.Panel;
 
 public class Score implements Displayable{
@@ -53,10 +56,11 @@ public class Score implements Displayable{
         score.getStyleClass().add("panel-success");
 
 
-        Pane pane = new Pane();
+        StackPane pane = new StackPane();
         pane.getChildren().add(score);
 
         pane.setStyle("-fx-padding: 25");
+
 
         return pane;
     }
