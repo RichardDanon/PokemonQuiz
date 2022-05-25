@@ -43,6 +43,7 @@ public class HelloApplication extends Application {
         VBox root = new VBox();
         root.setAlignment(Pos.TOP_CENTER);
 
+        //Creating the welcome page
         Panel welcomePanel = new Panel("Welcome to the PokeQuiz");
         welcomePanel.getStyleClass().add("panel-danger");
         welcomePanel.setStyle("-fx-padding: 90");
@@ -52,7 +53,7 @@ public class HelloApplication extends Application {
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         primaryStage.setScene(scene);
 
-        //Button
+        //Creating the Button and telling it how to behave depending on scenarios.
         Button b = new Button("Start");
         b.getStyleClass().setAll("btn", "btn-lg", "btn-primary");
         b.setPadding(new Insets(50));
